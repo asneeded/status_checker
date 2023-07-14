@@ -3,6 +3,11 @@ import requests
 import logging
 import concurrent.futures
 
+__author__ = "Adam Sneed"
+__copyright__ = "Copyright (C) 2023 Adam Sneed"
+__license__ = "MIT License"
+__version__ = "1.0"
+
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
