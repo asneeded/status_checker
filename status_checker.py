@@ -50,7 +50,7 @@ def get_status(uri):
 if __name__ == '__main__':
     format = '%(asctime)s: %(message)s'
     logging.basicConfig(filename='app.log', filemode='a',format=format, level=logging.INFO, datefmt="%H:%M:%S")
-
+    print(banner)
     good_urls = []
 
     with open(sys.argv[1]) as fh:
