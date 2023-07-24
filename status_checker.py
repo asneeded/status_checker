@@ -2,6 +2,7 @@ import sys
 import requests
 import logging
 import concurrent.futures
+from os import system, name
 
 __author__ = "Adam Sneed"
 __copyright__ = "Copyright (C) 2023 Adam Sneed"
@@ -33,6 +34,7 @@ def get_status(uri):
     try:
         r = requests.head(uri, timeout=5)
         if r.status_code == 200:
+            
             print(bcolors.OKGREEN + '[+]', uri, r.status_code)
             good_urls.append(uri)
         else:
@@ -45,6 +47,10 @@ def get_status(uri):
 if __name__ == '__main__':
     format = '%(asctime)s: %(message)s'
     logging.basicConfig(filename='app.log', filemode='a',format=format, level=logging.INFO, datefmt="%H:%M:%S")
+    if name == 'nt':
+        system('cls')
+    else:
+        system('clear')
     print(banner)
     good_urls = []
 
