@@ -9,13 +9,6 @@ __copyright__ = "Copyright (C) 2023 Adam Sneed"
 __license__ = "MIT License"
 __version__ = "1.0"
 
-
-banner = f"""
-____ ___ ____ ___ _  _ ____ ____ _  _ ____ ____ _  _ ____ ____ 
-[__   |  |__|  |  |  | [__  |    |__| |___ |    |_/  |___ |__/ 
-___]  |  |  |  |  |__| ___] |___ |  | |___ |___ | \_ |___ |  \ {__version__}
-"""
-
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -26,6 +19,13 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
+banner = f"""
+____ ___ ____ ___ _  _ ____ ____ _  _ ____ ____ _  _ ____ ____ 
+[__   |  |__|  |  |  | [__  |    |__| |___ |    |_/  |___ |__/ 
+___]  |  |  |  |  |__| ___] |___ |  | |___ |___ | \_ |___ |  \ {__version__}
+"""
+
 
 
 
@@ -51,7 +51,7 @@ if __name__ == '__main__':
         system('cls')
     else:
         system('clear')
-    print(banner)
+    print(bcolors.HEADER + banner + bcolors.ENDC)
     good_urls = []
 
     with open(sys.argv[1]) as fh:
